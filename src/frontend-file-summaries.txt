@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component managing section navigation state and rendering the active section (About, Past Years, or Future Plans) within the mobile shell layout.",
+  "frontend/src/components/layout/MobileShell.tsx": "Layout wrapper providing background image treatment, consistent container structure, and a global build identifier footer displayed below all content.",
+  "frontend/src/components/navigation/BottomNav.tsx": "Fixed bottom navigation bar with three touch-friendly buttons for switching between sections, showing active state with visual indicators.",
+  "frontend/src/sections/AboutSection.tsx": "About Me section displaying avatar, name, bio, and highlight cards with footer attribution; adjusted bottom padding to work with the global build identifier footer.",
+  "frontend/src/sections/PastYearsSection.tsx": "Past Years section rendering a timeline of past experiences as cards with year badges and descriptions.",
+  "frontend/src/sections/FuturePlansSection.tsx": "Future Plans section displaying goals as cards with timeframe badges and descriptions.",
+  "frontend/src/content/profileContent.ts": "Centralized content module exporting all profile data (about, past years, future plans) with TypeScript interfaces for type safety.",
+  "frontend/src/index.css": "Global styles defining a warm terracotta and sand color palette using OKLCH color space for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with custom colors, typography, shadows, and border radius values matching the warm design system.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks when backend functionality is added.",
+  "DEPLOYMENT.md": "Comprehensive deployment guide covering prerequisites, step-by-step deployment instructions, troubleshooting, and environment-specific notes for both local and mainnet deployments.",
+  "frontend/scripts/build-frontend.sh": "Shell script that builds the frontend with a UTC timestamp build identifier set via VITE_BUILD_ID environment variable.",
+  "frontend/scripts/print-frontend-url.sh": "Helper script that detects the network and prints the deployed frontend canister URL for easy access after deployment.",
+  "frontend/scripts/deploy.sh": "Convenience script that orchestrates the complete deployment workflow: builds frontend, deploys canisters, and prints the live URL.",
+  "frontend/src/buildInfo.ts": "Build information module that reads the build identifier from Vite environment variables and provides formatted display strings."
+}

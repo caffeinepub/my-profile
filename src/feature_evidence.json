@@ -1,0 +1,45 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-clear-repo-local-deployment-guide-and-scripts-so-the-latest-frontend-backend-can-be-deployed-to-the-internet-computer-and-the-deployed-url-can-be-retrieved-reliably",
+      "featureTitle": "Add a clear, repo-local deployment guide and scripts so the latest frontend + backend can be deployed to the Internet Computer and the deployed URL can be retrieved reliably.",
+      "files": [
+        "frontend/scripts/build-frontend.sh",
+        "frontend/scripts/deploy.sh",
+        "frontend/scripts/print-frontend-url.sh"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-expose-a-visible-app-build-identifier-in-the-ui-so-the-user-can-confirm-the-live-site-is-running-the-newest-deployment",
+      "featureTitle": "Expose a visible app build identifier in the UI so the user can confirm the live site is running the newest deployment.",
+      "files": [
+        "frontend/src/buildInfo.ts",
+        "frontend/src/components/layout/MobileShell.tsx",
+        "frontend/src/sections/AboutSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "build_request",
+  "title": "Prepare and publish the latest build so the live app reflects current behavior",
+  "projectName": "My Profile",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Add a clear, repo-local deployment guide and scripts so the latest frontend + backend can be deployed to the Internet Computer and the deployed URL can be retrieved reliably.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-9"
+        ],
+        "quotes": [
+          "push the changes to live so i can see the app behaviour"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A root-level deployment document exists (e.g., DEPLOYMENT.md) that explains how to deploy using dfx, including prerequisites, build steps, deploy steps, and how to obtain the live canister URL.",
+        "Package scripts (or equivalent documented commands) exist for: building the frontend assets, deploying canisters, and printing the deployed frontend URL.",
+        "Following the guide from a clean checkout results in a successful deploy without requiring undocumented manual steps."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Expose a visible app build identifier in the UI so the user can confirm the live site is running the newest deployment.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-9"
+        ],
+        "quotes": [
+          "push the changes to live so i can see the app behaviour"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The app displays a build identifier (e.g., version/commit/timestamp) in a non-intrusive location (such as the footer area within the MobileShell layout).",
+        "The build identifier is set at build time (not hardcoded in the component) so it changes across deployments.",
+        "The identifier is readable on mobile and in both light/dark themes."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo; only add migration.mo if state upgrades are introduced.",
+    "Do not edit frontend immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, and anything under frontend/src/components/ui; compose around them instead."
+  ],
+  "nonGoals": [
+    "Implementing the backend persistence/editing UI for profile details (About Me, Past Years, Future Plans).",
+    "Adding any new sections or changing the existing profile content structure beyond what is needed for deployment/version visibility."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

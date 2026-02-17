@@ -1,0 +1,29 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T17:59:53.482Z",
+  "summary": "REQ-8 (visible build identifier) appears implemented via a buildInfo module and a footer display in MobileShell, with the build ID sourced from a Vite build-time env var set by a build script. REQ-7 (repo-local deployment guide) cannot be fully verified from the provided diff summary because the actual root-level DEPLOYMENT.md file is not included among the added files (only referenced indirectly).",
+  "missing_requirements": [
+    {
+      "id": "REQ-7",
+      "requirement": "Add a clear, repo-local deployment guide and scripts so the latest frontend + backend can be deployed to the Internet Computer and the deployed URL can be retrieved reliably.",
+      "reason": "The diff summary does not show a root-level deployment document (e.g., DEPLOYMENT.md) being added/modified, so the required guide content (prereqs, build steps, deploy steps, URL retrieval) cannot be confirmed from the evidence provided. While frontend-file-summaries.txt mentions DEPLOYMENT.md, the file itself is not present in the added/modified file list or shown.",
+      "evidence": [
+        "<file-diff> ADDED FILES list (does not include DEPLOYMENT.md)",
+        "frontend-file-summaries.txt (mentions DEPLOYMENT.md but does not include its content)"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.72,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/scripts/build-frontend.sh",
+    "frontend/scripts/deploy.sh",
+    "frontend/scripts/print-frontend-url.sh",
+    "frontend/src/buildInfo.ts",
+    "frontend/src/components/layout/MobileShell.tsx",
+    "frontend/src/sections/AboutSection.tsx",
+    "project_state.json"
+  ]
+}

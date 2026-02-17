@@ -1,0 +1,64 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "My Profile — Deployment guide + visible build identifier (frontend-only)",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Provide repo-local deployment documentation and helper scripts for reproducible IC deploy + URL retrieval (frontend-side artifacts)",
+      "acceptanceCriteria": [
+        "A root-level deployment document exists (e.g., DEPLOYMENT.md) that explains how to deploy using dfx, including prerequisites, build steps, deploy steps, and how to obtain the live canister URL.",
+        "Package scripts (or equivalent documented commands) exist for: building the frontend assets, deploying canisters, and printing the deployed frontend URL.",
+        "Following the guide from a clean checkout results in a successful deploy without requiring undocumented manual steps."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "create",
+          "description": "Add a deployment guide section focused on frontend build/release responsibilities: prerequisites, how to build frontend assets, how to run the repo's deploy workflow, and how to retrieve and verify the deployed frontend canister URL; include how to verify the build identifier in the UI after deploy."
+        },
+        {
+          "path": "frontend/scripts/build-frontend.sh",
+          "operation": "create",
+          "description": "Create a repo-local frontend build script that runs the frontend build in a clean/reproducible way and sets/propagates the build identifier environment variable used by the UI (e.g., via VITE_* build-time env)."
+        },
+        {
+          "path": "frontend/scripts/print-frontend-url.sh",
+          "operation": "create",
+          "description": "Create a helper script that prints the deployed frontend URL for the canister hosting the web assets, suitable for copy/paste validation after deployment."
+        },
+        {
+          "path": "frontend/scripts/deploy.sh",
+          "operation": "create",
+          "description": "Create a convenience script that chains frontend build + the repo's IC deployment commands (documented), and then prints the deployed frontend URL using the print script."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Display a build identifier in the UI sourced from build-time configuration and readable in light/dark themes",
+      "acceptanceCriteria": [
+        "The app displays a build identifier (e.g., version/commit/timestamp) in a non-intrusive location (such as the footer area within the MobileShell layout).",
+        "The build identifier is set at build time (not hardcoded in the component) so it changes across deployments.",
+        "The identifier is readable on mobile and in both light/dark themes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/buildInfo.ts",
+          "operation": "create",
+          "description": "Add a small build-info module that reads the build identifier from build-time environment (e.g., import.meta.env) and exposes a safe display string for the UI."
+        },
+        {
+          "path": "frontend/src/components/layout/MobileShell.tsx",
+          "operation": "modify",
+          "description": "Render a non-intrusive footer area inside MobileShell that displays the build identifier from the shared build-info module; ensure Tailwind classes maintain readability on mobile and in both light/dark themes, and avoid changing immutable paths."
+        },
+        {
+          "path": "frontend/src/sections/AboutSection.tsx",
+          "operation": "modify",
+          "description": "Adjust the existing About section footer attribution layout (currently at the bottom of AboutSection) to avoid duplicated/competing footers now that MobileShell provides a global build identifier footer; keep the attribution while ensuring spacing works with the bottom navigation."
+        }
+      ]
+    }
+  ]
+}

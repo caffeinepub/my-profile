@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a mobile personal profile app with an 'About Me' section plus Past Experience and Future Plans sections, and add a simple backend to store/edit this content in-app.",
+  "architectural_notes": [
+    "Current backend is empty (actor {}); app content is not yet persisted.",
+    "Planned: implement a simple backend data model + endpoints/actor methods to save and retrieve About Me, Past Experience, and Future Plans content."
+  ],
+  "known_issues": [
+    "Backend persistence not implemented yet; user cannot save personal details.",
+    "Previous attempt to implement backend failed (\"AI couldn't implement your request\")."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-mobile-first-responsive-personal-profile-application-shell-that-works-well-on-phone-sized-screens-touch-friendly-spacing-readable-typography-and-a-layout-that-adapts-to-small-viewports",
+      "title": "Create a mobile-first, responsive personal profile application shell that works well on phone-sized screens (touch-friendly spacing, readable typography, and a layout that adapts to small viewports).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-about-me-page-section-as-the-primary-content-with-clearly-labeled-placeholders-for-user-provided-text-e-g-name-header-short-bio-paragraph-key-highlights-list-that-the-user-can-later-replace",
+      "title": "Implement an 'About Me' page/section as the primary content, with clearly labeled placeholders for user-provided text (e.g., name header, short bio paragraph, key highlights list) that the user can later replace.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-navigation-and-stub-pages-sections-for-1-past-years-experience-and-2-future-plan-s-using-clear-headings-and-placeholder-content-so-the-user-can-fill-them-in-later",
+      "title": "Add navigation and stub pages/sections for (1) past years/experience and (2) future plan(s), using clear headings and placeholder content so the user can fill them in later.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-define-a-cohesive-visual-theme-colors-typography-spacing-and-component-style-appropriate-for-a-personal-profile-portfolio-app-and-apply-it-consistently-across-all-sections",
+      "title": "Define a cohesive visual theme (colors, typography, spacing, and component style) appropriate for a personal profile/portfolio app and apply it consistently across all sections.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-simple-content-structure-approach-for-the-profile-text-about-me-past-years-entries-future-plans-entries-so-the-user-can-edit-content-later-in-one-place-without-needing-to-hunt-through-ui-code",
+      "title": "Add a simple content-structure approach for the profile text (About Me, Past Years entries, Future Plans entries) so the user can edit content later in one place without needing to hunt through UI code.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-static-images-avatar-and-background-from-the-frontend-static-assets-directory-and-display-them-in-the-ui-avatar-in-the-about-me-header-area-background-as-a-subtle-decorative-element",
+      "title": "Render the generated static images (avatar and background) from the frontend static assets directory and display them in the UI (avatar in the About Me header area; background as a subtle decorative element).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clear-repo-local-deployment-guide-and-scripts-so-the-latest-frontend-backend-can-be-deployed-to-the-internet-computer-and-the-deployed-url-can-be-retrieved-reliably",
+      "title": "Add a clear, repo-local deployment guide and scripts so the latest frontend + backend can be deployed to the Internet Computer and the deployed URL can be retrieved reliably.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-expose-a-visible-app-build-identifier-in-the-ui-so-the-user-can-confirm-the-live-site-is-running-the-newest-deployment",
+      "title": "Expose a visible app build identifier in the UI so the user can confirm the live site is running the newest deployment.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a mobile personal profile app with an 'About Me' page and planned sections for past years/experience and future plans.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add a simple backend/persistence so the user can enter and save About Me text, Past Experience entries, and Future Plans entries from the app.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "My Profile",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
